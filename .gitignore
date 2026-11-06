@@ -1,0 +1,11 @@
+# Visual Studio
+.vs/
+x64/
+Debug/
+*.user
+~AutoRecover.*
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+ipch/
