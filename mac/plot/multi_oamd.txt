@@ -1,0 +1,26 @@
+void multi_oamd(TString in="in.root",TString out="out.pdf"){
+	
+	
+	auto file = new TFile(input, "read");
+	
+	TCanvas *c1 = new TCanvas("c1","c1", 500, 400);
+	c1->Print(name + "[", "pdf");
+	
+	// no cut
+	tree->Draw("1-abs((ax1*ax2+ay1*ay2)/(sqrt(ax1**2+ay1**2)*sqrt(ax2**2+ay2**2)))>>h(101,-0.005,1.005)","");
+	h->SetTitle("coplanarity angle;1-|cos#theta|;");
+	c1->Print(name, "pdf");
+	c1->Clear();
+
+	tree->Draw("1-abs((ax1*ax2+ay1*ay2)/(sqrt(ax1**2+ay1**2)*sqrt(ax2**2+ay2**2)))>>h(22,-0.00005,0.00105","");
+	h->SetTitle("coplanarity angle(aroud 0);1-|cos#theta|;");
+	TLine *l = new TLine(0.0001,0,0.0001,195);
+	l->SetLineColor(2);
+	l->Draw();
+	c1->Print(name, "pdf");
+	c1->Clear();
+	tree->Draw("md:oa>>h(140,0,2.8,140,0,280)","flg==ntrk&&md<60-600*oa","colz")
+	
+	c1->Print(name + "]", "pdf");
+	
+}
